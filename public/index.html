@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>HokuTrainer</title>
+      <link rel="stylesheet" href="styles/normalize.css" media="screen" charset="utf-8">
+      <link rel="stylesheet" href="styles/html5bp.css" media="screen" charset="utf-8">
+      <link rel="stylesheet" href="styles/style.css" media="screen" charset="utf-8">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <!-- font awesome -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      <!-- Bootstrap JS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+      <!-- jQuery -->
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    </head>
+
+    <body>
+        <header>
+          <section class="container">
+            <a href="#" id='logo'><h1>HokuTrainer</h1></a>
+          </section>
+        </header>
+        <div id="totalRun">
+          <h1>Wow! You've already ran <span id="totalMiles">5</span> miles! That's about <span id="totalLegs">1</span> legs. You'll be ready for the <a href="http://hokurelay.com" target="_blank">Hoku Relay</a> in no time!
+          <h4>P.S. It's currently <span id="hiTemp">80</span>°F in Hawaii :)</h2>
+        </div>
+        <div id="addRunForm">
+          <p>On <input id="runDate" type="date" placeholder="YYYY-MM-DD">, I ran <input id="runDistance" type="text" placeholder="2"> miles in <input id="runTime" type="text" placeholder="17"> minutes
+          <button id="addRunBtn">I swear</button>
+        </div>
+        <section id="main" class="container">
+          <div class="listRun">
+            <section class="featuredImage">
+              <img src="images/test.png" alt="" />
+            </section>
+            <section class="runContent">
+              <h3>1 Mile Run</h3>
+              <h6>2017-11-15</h6><h6>/</h6><h6>8.5 min/mi pace</h6><h6>/</h6><h6>61°F</h6><h6>/</h6><h6>61% humidity</h6>
+            </section>
+            <div class="clearfix"></div>
+          </div>
+        </section>
+
+        <script>
+        function deleteRun(id) {
+          console.log('delete run ran');
+          let runReference = runAppReference.ref('runs').child(id);
+          runReference.remove();
+        };
+        </script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="js/app.js"></script>
+
+    </body>
+</html>
